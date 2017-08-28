@@ -1,11 +1,6 @@
 package srt.studentmanage.ui.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,8 +39,6 @@ public class LoginActivity extends BaseActivity {
                 R.anim.translatelogo);
         imgLogo.startAnimation(translate);
 
-
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +48,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void login() {
-        openActivity(new Intent(LoginActivity.this,MainActivity.class),true);
+        openActivity(new Intent(LoginActivity.this,Main2Activity.class),true);
         overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
     }
 

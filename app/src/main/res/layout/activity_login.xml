@@ -20,55 +20,54 @@
         android:src="@drawable/logoapp" />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+        android:id="@+id/loginLayout"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/shape"
-        android:id="@+id/loginLayout"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <EditText
+            android:id="@+id/editAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editAccount"
             android:background="@color/colorWhite"
+            android:ems="10"
             android:hint="Mã sinh viên ..."
-            android:textSize="20dp"
-            android:padding="4dp"/>
+            android:inputType="number"
+            android:padding="4dp"
+            android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/editPassword"
-            android:background="@color/colorWhite"
             android:layout_marginTop="10dp"
+            android:background="@color/colorWhite"
+            android:ems="10"
             android:hint="Mật khẩu ..."
-            android:textSize="20dp"
-            android:padding="4dp"/>
+            android:inputType="textPassword"
+            android:padding="4dp"
+            android:textSize="20dp" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
             <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đăng nhập"
-                android:id="@+id/btnLogin"
-                android:textStyle="bold"
-                android:stateListAnimator="@null"
                 android:background="@null"
+                android:stateListAnimator="@null"
+                android:text="Đăng nhập"
                 android:textColor="@color/colorWhite"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
