@@ -1,5 +1,6 @@
 package srt.studentmanage.ui.activities;
 
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
@@ -24,21 +25,38 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        loadData();
         loadTabs();
         loadListView();
     }
 
-    private void loadListView() {
-        lvThoiKhoaBieu= (ListView) findViewById(R.id.lvThoiKhoaBieu);
+    private void loadData() {
         dsThoiKhoaBieu=new ArrayList<ThoiKhoaBieu>();
         dsThoiKhoaBieu.add(new ThoiKhoaBieu(2,"Lập trình DTDD","117LTDD01",7,8,"Đỗ Phú Huy"
                 ,"14/08/2017","","A102"));
 
         dsThoiKhoaBieu.add(new ThoiKhoaBieu(2,"Lập trình C#","117LTC#01",9,10,"Đỗ Phú Quốc"
                 ,"14/08/2017","","A106"));
+    }
 
-        thoiKhoaBieuAdapter =new ThoiKhoaBieuAdapter(XemThoiKhoaBieuActivity.this,R.layout.item_lv_thoi_khoa_bieu,dsThoiKhoaBieu);
-        lvThoiKhoaBieu.setAdapter(thoiKhoaBieuAdapter);
+    private void loadListView() {
+        int thu;
+        for (thu=2;thu<=7;thu++){
+            lvThoiKhoaBieu=null;
+            thoiKhoaBieuAdapter=null;
+            LinearLayout currentLayout=null;
+            switch (thu){
+                case 2: currentLayout= (LinearLayout) findViewById(R.id.tab1); break;
+                case 3: currentLayout= (LinearLayout) findViewById(R.id.tab2); break;
+                case 4: currentLayout= (LinearLayout) findViewById(R.id.tab3); break;
+                case 5: currentLayout= (LinearLayout) findViewById(R.id.tab4); break;
+                case 6: currentLayout= (LinearLayout) findViewById(R.id.tab5); break;
+                case 7: currentLayout= (LinearLayout) findViewById(R.id.tab6); break;
+            }
+            lvThoiKhoaBieu= (ListView) currentLayout.findViewById(R.id.lvThoiKhoaBieu);
+            thoiKhoaBieuAdapter =new ThoiKhoaBieuAdapter(XemThoiKhoaBieuActivity.this,R.layout.item_lv_thoi_khoa_bieu,dsThoiKhoaBieu);
+            lvThoiKhoaBieu.setAdapter(thoiKhoaBieuAdapter);
+        }
     }
 
     private void loadTabs() {
@@ -75,10 +93,13 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
         spec.setIndicator("Thứ 7");
         spec.setContent(R.id.tab6);
         tabHost.addTab(spec);
+
+        tabHost.setCurrentTab(0);
     }
 
     @Override
     protected void main() {
+
     }
 
 }

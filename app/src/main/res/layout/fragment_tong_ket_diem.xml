@@ -1,0 +1,163 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="srt.studentmanage.ui.fragments.TongKetDiemFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Điểm trung bình chung tích lũy: " />
+
+            <TextView
+                android:id="@+id/txtDiemTrungBinhChung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="3.85" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số tín chỉ đã tích lũy: " />
+            <TextView
+                android:id="@+id/txtSoTcTichLuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="87" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xếp hạng: " />
+
+            <TextView
+                android:id="@+id/txtXepHang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="Xuất sắc" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tổng kết theo học kỳ:"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Mã\nHK" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Số\nTCĐK" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Điểm\nTBCHT" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Điểm\nRL" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Xếp loại" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_textview"
+                android:layout_weight="1"
+                android:text="Ghi Chú" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvTongKetTheoHocKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Các sự kiện khen thưởng kỉ luật:"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_marginLeft="24dp"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/text_size"
+            android:layout_height="wrap_content"
+            android:text="- Học kỳ 115: Thư khen thưởng của Hiệu trưởng - Lý do: Thành tích học tập khá trong học kỳ 115 " />
+    </LinearLayout>
+</FrameLayout>

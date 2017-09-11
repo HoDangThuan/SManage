@@ -7,4 +7,7 @@
     <color name="colorApp">#009788</color>
     <color name="colorDark">#02786a</color>
     <color name="colorText">#3498db</color>
+    <color name="colorText2">#254b7c</color>
+    <color name="tabcolor">#a2a2ef</color>
+    <color name="tabselect">#f40404</color>
 </resources>

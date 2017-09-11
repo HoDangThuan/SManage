@@ -49,12 +49,11 @@ public class ThoiKhoaBieuAdapter extends ArrayAdapter<ThoiKhoaBieu> {
         ThoiKhoaBieu tkb=this.objects.get(position);
         txtTiet.setText("Tiết\n"+tkb.getTuTiet()+"-"+tkb.getDenTiet());
         txtTenMonHoc.setText(tkb.getTenMonHoc());
-        txtGiangVien.setText("GV "+tkb.getGiangVien());
+        txtGiangVien.setText("GV: "+tkb.getGiangVien());
         txtPhong.setText("Phòng: "+tkb.getPhong());
         txtLop.setText("Lớp: "+tkb.getLopHP());
         txtGhiChu.setText("Ghi chú: "+tkb.getGhiChu());
         txtNgayHieuLuc.setText("NHL: "+tkb.getNgayHL());
-
         return row;
     }
 }
