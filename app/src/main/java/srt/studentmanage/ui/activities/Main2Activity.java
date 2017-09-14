@@ -1,8 +1,6 @@
 package srt.studentmanage.ui.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -11,7 +9,7 @@ import srt.studentmanage.ui.intalize.BaseActivity;
 
 public class Main2Activity extends BaseActivity {
 
-    ImageButton btnXemTKB,btnXemDiem;
+    ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao;
     @Override
     protected int getLayout() {
         return R.layout.activity_main2;
@@ -21,6 +19,7 @@ public class Main2Activity extends BaseActivity {
     protected void initViews() {
         btnXemTKB= (ImageButton) findViewById(R.id.btnXemTKB);
         btnXemDiem= (ImageButton) findViewById(R.id.btnXemDiem);
+        btnXemTinDaoTao =(ImageButton) findViewById(R.id.btnXemTinDaoTao);
     }
 
     @Override
@@ -40,7 +39,14 @@ public class Main2Activity extends BaseActivity {
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
-
+        btnXemTinDaoTao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main2Activity.this, XemTinDaoTaoActivity.class);
+                openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
+            }
+        });
 
     }
 

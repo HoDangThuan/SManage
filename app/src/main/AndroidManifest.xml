@@ -27,12 +27,9 @@
             android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.activities.XemThoiKhoaBieuActivity"
-            android:label="@string/title_activity_xem_tkb">
-
-        </activity>
-        <activity android:name=".ui.activities.XemDiemActivity">
-
-        </activity>
+            android:label="@string/title_activity_xem_tkb"></activity>
+        <activity android:name=".ui.activities.XemDiemActivity"></activity>
+        <activity android:name=".ui.activities.XemTinDaoTaoActivity"></activity>
     </application>
 
 </manifest>
