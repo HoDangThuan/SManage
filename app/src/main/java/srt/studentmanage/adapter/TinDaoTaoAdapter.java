@@ -18,6 +18,12 @@ import srt.studentmanage.model.objects.TinDaoTao;
  */
 
 public class TinDaoTaoAdapter extends ArrayAdapter<TinDaoTao> {
+    public static class ViewHolder {
+        TextView txtTieuDe;
+        TextView txtNoiDung;
+        TextView txtTacGia;
+        TextView txtNgayViet;
+    }
     Activity context;
     int resource;
     List<TinDaoTao> objects;
@@ -32,16 +38,22 @@ public class TinDaoTaoAdapter extends ArrayAdapter<TinDaoTao> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=this.context.getLayoutInflater();
-        View row=inflater.inflate(this.resource,null);
-        TextView txtTieuDe, txtNoiDung, txtTacGia, txtNgayViet;
-        txtTieuDe = (TextView) row.findViewById(R.id.txtTieuDe);
-        txtNoiDung = (TextView) row.findViewById(R.id.txtNoiDung);
-        txtTacGia = (TextView) row.findViewById(R.id.txtTacGia);
-        txtNgayViet = (TextView) row.findViewById(R.id.txtNgayViet);
+        View row = convertView;
+//        TextView txtTieuDe, txtNoiDung, txtTacGia, txtNgayViet;
+        if (row== null){
+            row=inflater.inflate(this.resource,null);
+            ViewHolder viewHolder = new ViewHolder();
+            viewHolder.txtTieuDe = (TextView) row.findViewById(R.id.txtTieuDe);
+            viewHolder.txtNoiDung = (TextView) row.findViewById(R.id.txtNoiDung);
+            viewHolder.txtTacGia = (TextView) row.findViewById(R.id.txtTacGia);
+            viewHolder.txtNgayViet = (TextView) row.findViewById(R.id.txtNgayViet);
+            row.setTag(viewHolder);
+        }
+        ViewHolder viewHolder = (ViewHolder) row.getTag();
         TinDaoTao tdt = this.objects.get(position);
-        txtTieuDe.setText(tdt.getTieuDe());
-        txtNoiDung.setText(tdt.getNoiDung());
-        txtTacGia.setText("Author: "+tdt.getTacGia());
+        viewHolder.txtTieuDe.setText(tdt.getTieuDe());
+        viewHolder.txtNoiDung.setText(tdt.getNoiDung());
+        viewHolder.txtTacGia.setText("Author: "+tdt.getTacGia());
         return row;
     }
 }
