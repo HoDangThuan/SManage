@@ -48,7 +48,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void login() {
-        openActivity(new Intent(LoginActivity.this,Main2Activity.class),true);
+        openActivity(new Intent(LoginActivity.this,MainActivity.class),true);
         overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
     }
 
