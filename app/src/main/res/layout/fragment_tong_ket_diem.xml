@@ -88,7 +88,7 @@
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Mã\nHK" />
 
@@ -97,7 +97,7 @@
                 android:layout_width="0dp"
                 android:gravity="center"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Số\nTCĐK" />
 
@@ -106,7 +106,7 @@
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Điểm\nTBCHT" />
 
@@ -115,7 +115,7 @@
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Điểm\nRL" />
 
@@ -124,7 +124,7 @@
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Xếp loại" />
 
@@ -133,7 +133,7 @@
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview"
+                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
                 android:text="Ghi Chú" />
         </LinearLayout>
@@ -152,12 +152,11 @@
             android:layout_marginBottom="5dp"
             android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_marginLeft="24dp"
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/text_size"
-            android:layout_height="wrap_content"
-            android:text="- Học kỳ 115: Thư khen thưởng của Hiệu trưởng - Lý do: Thành tích học tập khá trong học kỳ 115 " />
+        <ListView
+            android:id="@+id/lvSuKienKhenThuongKiLuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
 </FrameLayout>

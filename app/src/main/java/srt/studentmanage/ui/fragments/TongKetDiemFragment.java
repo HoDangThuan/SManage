@@ -13,14 +13,18 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import srt.studentmanage.R;
+import srt.studentmanage.adapter.KhenThuongKiLuatAdapter;
 import srt.studentmanage.adapter.TongKetHocKyAdapter;
 import srt.studentmanage.model.objects.DiemHocKy;
+import srt.studentmanage.model.objects.KhenThuongKiLuat;
 
 
 public class TongKetDiemFragment extends Fragment {
-    ListView lvTongKetTheoHocKy;
+    ListView lvTongKetTheoHocKy, lvSuKienKhenThuongKiLuat;
     ArrayList<DiemHocKy> dsDiemHocKy;
+    ArrayList<KhenThuongKiLuat> dsKhenThuongKiLuat;
     TongKetHocKyAdapter tongKetHocKyAdapter;
+    KhenThuongKiLuatAdapter khenThuongKiLuatAdapter;
     View v;
     public TongKetDiemFragment() {
     }
@@ -29,11 +33,21 @@ public class TongKetDiemFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v=inflater.inflate(R.layout.fragment_tong_ket_diem,container,false);
-        loadListView();
+        loadListViewXemDiemHocKy();
+        loadListViewKhenThuongKiLuat();
         return v;
     }
 
-    private void loadListView() {
+    private void loadListViewKhenThuongKiLuat() {
+        lvSuKienKhenThuongKiLuat= (ListView) v.findViewById(R.id.lvSuKienKhenThuongKiLuat);
+        dsKhenThuongKiLuat=new ArrayList<>();
+        dsKhenThuongKiLuat.add(new KhenThuongKiLuat("- Học kỳ 115: Thư khen thưởng của Hiệu trưởng - Lý do: Thành tích học tập khá trong học kỳ 115"));
+        dsKhenThuongKiLuat.add(new KhenThuongKiLuat("- Học kỳ 116: Thư khen thưởng của Hiệu trưởng - Lý do: Thành tích học tập khá trong học kỳ 115"));
+        khenThuongKiLuatAdapter=new KhenThuongKiLuatAdapter(getActivity(),R.layout.item_lv_su_kien_khen_thuong_ki_luat,dsKhenThuongKiLuat);
+        lvSuKienKhenThuongKiLuat.setAdapter(khenThuongKiLuatAdapter);
+    }
+
+    private void loadListViewXemDiemHocKy() {
         lvTongKetTheoHocKy= (ListView) v.findViewById(R.id.lvTongKetTheoHocKy);
         dsDiemHocKy=new ArrayList<>();
         dsDiemHocKy.add(new DiemHocKy(115,17,3.89,1,"Bình thường",""));
