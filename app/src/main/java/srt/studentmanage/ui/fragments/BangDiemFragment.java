@@ -1,6 +1,7 @@
 package srt.studentmanage.ui.fragments;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -46,8 +47,6 @@ public class BangDiemFragment extends Fragment {
         dsHocKy.add(217);
         dsHocKy.add(317);
         spnHocKy= (Spinner) v.findViewById(R.id.spnHocKy);
-//        ArrayAdapter<Integer> hocKyAdapter=new ArrayAdapter<Integer>(getActivity()
-//                ,android.R.layout.simple_spinner_item,dsHocKy);
         ArrayAdapter<Integer> hocKyAdapter=new ArrayAdapter<Integer>(getActivity(),R.layout.spinner_item,dsHocKy);
         hocKyAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spnHocKy.setAdapter(hocKyAdapter);

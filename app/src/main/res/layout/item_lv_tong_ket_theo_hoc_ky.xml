@@ -6,14 +6,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="6"
+        android:weightSum="5"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtMaHK"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_size_2"
             android:gravity="center"
             android:layout_width="0dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_height="match_parent"
             android:background="@drawable/custom_textview"
             android:layout_weight="1"
@@ -23,7 +25,7 @@
             android:id="@+id/txtSoTCDK"
             android:layout_width="0dp"
             android:gravity="center"
-            android:textSize="11dp"
+            android:textSize="@dimen/text_size_2"
             android:layout_height="match_parent"
             android:background="@drawable/custom_textview"
             android:layout_weight="1"
@@ -36,13 +38,13 @@
             android:layout_height="match_parent"
             android:background="@drawable/custom_textview"
             android:layout_weight="1"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_size_2"
             android:text="3.89" />
 
         <TextView
             android:id="@+id/txtDiemRL"
             android:gravity="center"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_size_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@drawable/custom_textview"
@@ -59,14 +61,14 @@
             android:layout_weight="1"
             android:text="Bình thường" />
 
-        <TextView
-            android:id="@+id/txtGhiChu"
-            android:gravity="center"
-            android:textSize="@dimen/text_size"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/custom_textview"
-            android:layout_weight="1"
-            android:text="" />
+        <!--<TextView-->
+            <!--android:id="@+id/txtGhiChu"-->
+            <!--android:gravity="center"-->
+            <!--android:textSize="@dimen/text_size"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/custom_textview"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="" />-->
     </LinearLayout>
 </LinearLayout>

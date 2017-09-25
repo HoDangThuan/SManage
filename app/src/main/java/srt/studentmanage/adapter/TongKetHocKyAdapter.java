@@ -36,14 +36,13 @@ public class TongKetHocKyAdapter extends ArrayAdapter<DiemHocKy> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row=inflater.inflate(this.resource,null);
-        TextView txtMaHK, txtSoTCDK, txtDiemTB, txtDiemRL, txtXepLoai, txtGhiChu;
+        TextView txtMaHK, txtSoTCDK, txtDiemTB, txtDiemRL, txtXepLoai;
 
         txtMaHK= (TextView) row.findViewById(R.id.txtMaHK);
         txtSoTCDK= (TextView) row.findViewById(R.id.txtSoTCDK);
         txtDiemTB= (TextView) row.findViewById(R.id.txtDiemTB);
         txtDiemRL= (TextView) row.findViewById(R.id.txtDiemRL);
         txtXepLoai= (TextView) row.findViewById(R.id.txtXepLoai);
-        txtGhiChu= (TextView) row.findViewById(R.id.txtGhiChu);
 
         DiemHocKy diemHocKy=this.objects.get(position);
         txtMaHK.setText(diemHocKy.getMaHK()+"");
@@ -51,7 +50,6 @@ public class TongKetHocKyAdapter extends ArrayAdapter<DiemHocKy> {
         txtDiemTB.setText(diemHocKy.getDiemTB()+"");
         txtDiemRL.setText(diemHocKy.getDiemRL()+"");
         txtXepLoai.setText(diemHocKy.getXepLoai());
-        txtGhiChu.setText(diemHocKy.getGhiChu());
         return row;
     }
 }
