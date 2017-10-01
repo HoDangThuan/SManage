@@ -29,6 +29,7 @@
         <activity android:name=".ui.activities.XemTinDaoTaoActivity" />
         <activity android:name=".ui.activities.ChiTietDaoTaoActivity" />
         <activity android:name=".ui.activities.DoiMatKhauActivity" />
+        <activity android:name=".ui.activities.CapNhatTTCaNhanActivity"></activity>
     </application>
 
 </manifest>
