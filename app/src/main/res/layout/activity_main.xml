@@ -7,239 +7,335 @@
     android:background="@color/colorWhite"
     android:orientation="vertical"
     tools:context="srt.studentmanage.ui.activities.MainActivity">
-
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20px"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/layout_margin_bottom_tablerow_main_activity"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/btnXemTKB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:paddingBottom="15dp"
-                android:paddingTop="15dp"
-                app:srcCompat="@drawable/calendar" />
+                <ImageButton
+                    android:id="@+id/btnXemTKB"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    app:srcCompat="@drawable/calendar" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Thời khóa biểu"
-                android:textColor="@color/colorText" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Thời khóa biểu"
+                    android:textColor="@color/colorText" />
+            </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/notification" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Thông báo"
+                    android:textColor="@color/colorText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnXemDiem"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    app:srcCompat="@drawable/result" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Xem điểm"
+                    android:textColor="@color/colorText" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:weightSum="3"
+            android:layout_marginBottom="@dimen/layout_margin_bottom_tablerow_main_activity"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:paddingBottom="15dp"
-                android:paddingTop="15dp"
-                app:srcCompat="@drawable/notification" />
+                <ImageButton
+                    android:id="@+id/btnDoiMatKhau"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    app:srcCompat="@drawable/password" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Xem tin"
-                android:textColor="@color/colorText" />
-        </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Đổi mật khẩu" />
+            </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btnXemHocPhi"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/dollar" />
+
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Học phí" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btnXemTinDaoTao"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/invoce" />
+
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Tin đào tạo" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:weightSum="3"
+            android:layout_marginBottom="@dimen/layout_margin_bottom_tablerow_main_activity"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btnXemLichThi"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/calendar2" />
 
-            <ImageButton
-                android:id="@+id/btnXemDiem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:paddingBottom="15dp"
-                android:paddingTop="15dp"
-                app:srcCompat="@drawable/result" />
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Lịch thi" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Xem điểm"
-                android:textColor="@color/colorText" />
-        </LinearLayout>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btnXemThongTin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/infor" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="3"
-        android:layout_marginBottom="20px"
-        android:orientation="horizontal">
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Thông tin" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_weight="1"
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btnDangKyMonHoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/create" />
+
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Đăng ký môn học" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:weightSum="3"
+            android:layout_marginBottom="@dimen/layout_margin_bottom_tablerow_main_activity"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/btnDoiMatKhau"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:paddingBottom="15dp"
-                android:paddingTop="15dp"
-                app:srcCompat="@drawable/user" />
+                <ImageButton
+                    android:id="@+id/btnCapNhatNganHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/bankaccount" />
 
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Đổi mật khẩu" />
-        </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Tài khoản\nngân hàng" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/btnXemHocPhi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/colorWhite"
-                app:srcCompat="@drawable/dollar" />
+                <ImageButton
+                    android:id="@+id/btnGuiEmail"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    app:srcCompat="@drawable/message" />
 
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Học phí" />
-        </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Gửi email\ncho GV-CBCNV" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
+                android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/btnXemTinDaoTao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/colorWhite"
-                app:srcCompat="@drawable/invoce" />
+                <ImageButton
+                    android:id="@+id/btnHocPhanChuaTichLuy"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="@dimen/height_image_button_main_activity"
+                    android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
+                    android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
+                    app:srcCompat="@drawable/failed" />
 
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Đào tạo" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="3"
-        android:layout_marginBottom="20px"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/btnXemLichThi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/colorWhite"
-                app:srcCompat="@drawable/calendar2" />
-
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Lịch thi" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/btnXemThongTin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/colorWhite"
-                app:srcCompat="@drawable/infor" />
-
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Thông tin" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/btnDangKyMonHoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:background="@color/colorWhite"
-                app:srcCompat="@drawable/create" />
-
-            <TextView
-                android:textColor="@color/colorText"
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Đăng ký môn học" />
-        </LinearLayout>
-    </LinearLayout>
+                <TextView
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Học phần\nchưa tích lũy" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
