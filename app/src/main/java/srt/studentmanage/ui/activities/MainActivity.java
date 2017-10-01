@@ -9,7 +9,7 @@ import srt.studentmanage.ui.intalize.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
-    ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao;
+    ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao,btnDoiMatKhau;
     @Override
     protected int getLayout() {
         return R.layout.activity_main;
@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity {
         btnXemTKB= (ImageButton) findViewById(R.id.btnXemTKB);
         btnXemDiem= (ImageButton) findViewById(R.id.btnXemDiem);
         btnXemTinDaoTao =(ImageButton) findViewById(R.id.btnXemTinDaoTao);
+        btnDoiMatKhau= (ImageButton) findViewById(R.id.btnDoiMatKhau);
     }
 
     @Override
@@ -44,6 +45,13 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, XemTinDaoTaoActivity.class);
                 openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
+            }
+        });
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(new Intent(MainActivity.this,DoiMatKhauActivity.class),false);
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
