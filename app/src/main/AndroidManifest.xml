@@ -27,7 +27,8 @@
         <activity android:name=".ui.activities.XemDiemActivity">
         </activity>
         <activity android:name=".ui.activities.XemTinDaoTaoActivity" />
-        <activity android:name=".ui.activities.ChiTietDaoTaoActivity"></activity>
+        <activity android:name=".ui.activities.ChiTietDaoTaoActivity" />
+        <activity android:name=".ui.activities.CapNhatTkNganHangActivity" />
     </application>
 
 </manifest>
