@@ -1,5 +1,9 @@
 package srt.studentmanage.ui.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -35,6 +39,17 @@ public class XemTinDaoTaoActivity extends BaseActivity {
         TinDaoTaoAdapter adapter = new TinDaoTaoAdapter(this, R.layout.item_lv_tin_dao_tao,dsTinDaoTao);
         adapter.notifyDataSetChanged();
         lvTinDaoTao.setAdapter(adapter);
+        lvTinDaoTao.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(getApplicationContext(), ChiTietDaoTaoActivity.class);
+                Bundle thongTin = new Bundle();
+                thongTin.putString("tdt", dsTinDaoTao.get(i).getNoiDung());
+                startActivity(intent);
+//                Toast.makeText(getApplicationContext(),"Vị trí", Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
     @Override

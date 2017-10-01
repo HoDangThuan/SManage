@@ -20,16 +20,14 @@
         </activity>
         <activity
             android:name=".ui.activities.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.Main2Activity"
             android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.activities.XemThoiKhoaBieuActivity"
-            android:label="@string/title_activity_xem_tkb"></activity>
-        <activity android:name=".ui.activities.XemDiemActivity"></activity>
-        <activity android:name=".ui.activities.XemTinDaoTaoActivity"></activity>
+            android:label="@string/title_activity_xem_tkb" />
+        <activity android:name=".ui.activities.XemDiemActivity">
+        </activity>
+        <activity android:name=".ui.activities.XemTinDaoTaoActivity" />
+        <activity android:name=".ui.activities.ChiTietDaoTaoActivity"></activity>
     </application>
 
 </manifest>
