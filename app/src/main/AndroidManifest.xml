@@ -24,12 +24,12 @@
         <activity
             android:name=".ui.activities.XemThoiKhoaBieuActivity"
             android:label="@string/title_activity_xem_tkb" />
-        <activity android:name=".ui.activities.XemDiemActivity">
-        </activity>
+        <activity android:name=".ui.activities.XemDiemActivity"></activity>
         <activity android:name=".ui.activities.XemTinDaoTaoActivity" />
         <activity android:name=".ui.activities.ChiTietDaoTaoActivity" />
         <activity android:name=".ui.activities.DoiMatKhauActivity" />
-        <activity android:name=".ui.activities.CapNhatTTCaNhanActivity"></activity>
+        <activity android:name=".ui.activities.CapNhatTTCaNhanActivity" />
+        <activity android:name=".ui.activities.XemHocPhiActivity"></activity>
     </application>
 
 </manifest>
