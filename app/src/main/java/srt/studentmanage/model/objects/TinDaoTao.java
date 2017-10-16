@@ -1,10 +1,12 @@
 package srt.studentmanage.model.objects;
 
+import java.io.Serializable;
+
 /**
  * Created by Huu Ty on 14/09/2017.
  */
 
-public class TinDaoTao {
+public class TinDaoTao implements Serializable {
     private int maTin;
     private String tieuDe;
     private String noiDung;

@@ -1,10 +1,12 @@
 package srt.studentmanage.ui.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 import srt.studentmanage.R;
+import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
 public class MainActivity extends BaseActivity {
@@ -22,8 +24,12 @@ public class MainActivity extends BaseActivity {
         btnXemTinDaoTao =(ImageButton) findViewById(R.id.btnXemTinDaoTao);
         btnDoiMatKhau= (ImageButton) findViewById(R.id.btnDoiMatKhau);
         btnXemThongTin= (ImageButton) findViewById(R.id.btnXemThongTin);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getBundleExtra("bundle");
+        SinhVien sv = (SinhVien) bundle.getSerializable("SV");
+        setTitle(sv.getHoTen());
     }
-
+//151250533269
     @Override
     protected void main() {
         btnXemTKB.setOnClickListener(new View.OnClickListener() {

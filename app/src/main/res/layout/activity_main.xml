@@ -24,23 +24,23 @@
                 android:layout_marginRight="@dimen/margin_linear_layout_main_activity"
                 android:layout_marginLeft="@dimen/margin_linear_layout_main_activity"
                 android:orientation="vertical">
-
                 <ImageButton
-                    android:id="@+id/btnXemTKB"
+                    android:id="@+id/btnXemTinDaoTao"
                     android:layout_width="match_parent"
-                    android:background="@color/colorWhite"
                     android:layout_height="@dimen/height_image_button_main_activity"
                     android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
                     android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
-                    app:srcCompat="@drawable/calendar" />
+                    android:background="@color/colorWhite"
+                    app:srcCompat="@drawable/invoce" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:textColor="@color/colorText"
+                    android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Thời khóa biểu"
-                    android:textColor="@color/colorText" />
+                    android:text="Tin đào tạo" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -159,21 +159,21 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <ImageButton
-                    android:id="@+id/btnXemTinDaoTao"
+                    android:id="@+id/btnXemTKB"
                     android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
                     android:layout_height="@dimen/height_image_button_main_activity"
                     android:layout_marginBottom="@dimen/layout_margin_image_button_main_activity"
                     android:layout_marginTop="@dimen/layout_margin_image_button_main_activity"
-                    android:background="@color/colorWhite"
-                    app:srcCompat="@drawable/invoce" />
+                    app:srcCompat="@drawable/calendar" />
 
                 <TextView
-                    android:textColor="@color/colorText"
-                    android:id="@+id/textView6"
+                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Tin đào tạo" />
+                    android:text="Thời khóa biểu"
+                    android:textColor="@color/colorText" />
             </LinearLayout>
         </TableRow>
         <TableRow
