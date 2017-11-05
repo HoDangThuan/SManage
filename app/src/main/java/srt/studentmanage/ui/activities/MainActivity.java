@@ -1,7 +1,12 @@
 package srt.studentmanage.ui.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import srt.studentmanage.R;
@@ -74,4 +79,32 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater()
+                .inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.mnLogin: dialogLogin(); break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void dialogLogin(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_login);
+        Button btnCancer = (Button) dialog.findViewById(R.id.btnCancer);
+        btnCancer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
 }
