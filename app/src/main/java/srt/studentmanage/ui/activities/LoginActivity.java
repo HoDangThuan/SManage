@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import srt.studentmanage.R;
 import srt.studentmanage.common.RestClient;
+import srt.studentmanage.common.WebService;
 import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
@@ -63,7 +64,7 @@ public class LoginActivity extends BaseActivity {
         masv= txtMaSV.getText().toString();
         pass = txtPass.getText().toString();
         LoginAsyncTask loginAsyncTask= new LoginAsyncTask();
-        loginAsyncTask.execute("http://192.168.1.234/smanage/api/sinhvien");
+        loginAsyncTask.execute(WebService.URL+"sinhvien");
 
 //        openActivity(new Intent(LoginActivity.this,MainActivity.class),true);
 //        overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
@@ -100,26 +101,29 @@ public class LoginActivity extends BaseActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            try {
-                s=s.substring(1,s.length()-1);
-                JSONObject object = new JSONObject(s);
-                String p=object.getString("Pass");
-                if (p.equals(pass)){
-                    SinhVien sv=new SinhVien();
-                    sv.setMaSV(masv);
-                    sv.setHoTen(object.getString("HoTen"));
-                    Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                    Bundle bundle=new Bundle();
-                    bundle.putSerializable("SV",sv);
-                    intent.putExtra("bundle",bundle);
-                    SinhVien.currentSV=masv;
-                    openActivity(intent,true);
-                    overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
-                }else{
+            if (s.isEmpty()) Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
+            else{
+                try {
+                    s=s.substring(1,s.length()-1);
+                    JSONObject object = new JSONObject(s);
+                    String p=object.getString("Pass");
+                    if (p.equals(pass)){
+                        SinhVien sv=new SinhVien();
+                        sv.setMaSV(masv);
+                        sv.setHoTen(object.getString("HoTen"));
+                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putSerializable("SV",sv);
+                        intent.putExtra("bundle",bundle);
+                        SinhVien.currentSV=masv;
+                        openActivity(intent,true);
+                        overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
+                    }else{
+                        Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
                     Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
         }
     }

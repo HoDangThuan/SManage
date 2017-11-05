@@ -19,6 +19,7 @@ import java.io.InputStreamReader;
  */
 
 public class WebService {
+    public static  final String URL="http://10.79.120.58/smanager/api/";
     public static String convertInputStreamToString(InputStream inputStream) throws IOException {
         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
         String line = "";

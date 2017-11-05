@@ -26,7 +26,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/vl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.151"
@@ -34,11 +34,11 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/txtMaSV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.39"
-            android:text="151250533241"
+            android:text=""
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -58,11 +58,11 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/txtHoTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.21"
-            android:text="PHẠM HỮU THẮNG"
+            android:text=""
             android:textSize="15sp" />
     </LinearLayout>
 
@@ -98,12 +98,12 @@
         android:textSize="17sp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtNoiSinh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Thị trấn Thạch Hà, huyện Thạch Hà, tỉnh Hà Tĩnh" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textView31"
@@ -113,12 +113,12 @@
         android:textSize="17sp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtDiaChi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="xã Eađar, huyện Eakar, tỉnh ĐắkLắk" />
+        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,12 +134,12 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/txtSoDT"
             android:layout_width="535dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="0163530****" />
+            android:text="" />
     </LinearLayout>
 
     <TextView
@@ -151,13 +151,13 @@
         android:textSize="17sp" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.03"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="phamhuuthang7697@gmail.com" />
+        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -173,7 +173,7 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/txtMobile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -197,11 +197,11 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/txtCMND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.39"
-            android:text="241638702"
+            android:text=""
             android:textSize="17sp" />
 
     </LinearLayout>
@@ -220,11 +220,11 @@
             android:textSize="17sp" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/txtATM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="105002510510"
+            android:text=""
             android:textSize="17sp" />
 
     </LinearLayout>

@@ -52,7 +52,7 @@ public class TinDaoTaoAdapter extends ArrayAdapter<TinDaoTao> {
         ViewHolder viewHolder = (ViewHolder) row.getTag();
         TinDaoTao tdt = this.objects.get(position);
         viewHolder.txtTieuDe.setText(tdt.getTieuDe());
-        viewHolder.txtNoiDung.setText(tdt.getNoiDung().substring(1,100)+"...");
+        viewHolder.txtNoiDung.setText(tdt.getNoiDung());
         viewHolder.txtTacGia.setText("Author: "+tdt.getTacGia());
         return row;
     }

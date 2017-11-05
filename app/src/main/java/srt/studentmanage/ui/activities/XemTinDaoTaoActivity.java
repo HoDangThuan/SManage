@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import srt.studentmanage.R;
 import srt.studentmanage.adapter.TinDaoTaoAdapter;
 import srt.studentmanage.common.RestClient;
+import srt.studentmanage.common.WebService;
 import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.model.objects.TinDaoTao;
 import srt.studentmanage.ui.intalize.BaseActivity;
@@ -47,7 +48,7 @@ public class XemTinDaoTaoActivity extends BaseActivity {
         lvTinDaoTao.setAdapter(adapter);
 
         HttpAsyncTask httpAsyncTask=new HttpAsyncTask();
-        httpAsyncTask.execute("http://192.168.1.234/smanage/api/tindaotao");
+        httpAsyncTask.execute(WebService.URL+"tindaotao");
     }
     @Override
     protected void main() {

@@ -13,7 +13,10 @@
         <activity
             android:name=".ui.activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activities.MainActivity"
@@ -28,12 +31,11 @@
         </activity>
         <activity android:name=".ui.activities.ChiTietDaoTaoActivity" android:label="Chi tiết tin đào tạo" />
         <activity android:name=".ui.activities.DoiMatKhauActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.activities.CapNhatTTCaNhanActivity" />
+        <activity android:name=".ui.activities.XemHocPhiActivity"></activity>
+
     </application>
 
 </manifest>
