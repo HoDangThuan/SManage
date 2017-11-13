@@ -61,71 +61,8 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void login() {
-        masv= txtMaSV.getText().toString();
-        pass = txtPass.getText().toString();
-        LoginAsyncTask loginAsyncTask= new LoginAsyncTask();
-        loginAsyncTask.execute(WebService.URL+"sinhvien");
-
-//        openActivity(new Intent(LoginActivity.this,MainActivity.class),true);
-//        overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
-    }
-
-    private void showDialog(String msg){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage(msg);
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "Ok",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-    }
-    private class  LoginAsyncTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-            RestClient client = new RestClient(params[0]);
-            client.AddParam("masv", masv);
-            try {
-                client.Execute(RestClient.RequestMethod.GET);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            String response = client.getResponse();
-            return response;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            if (s.isEmpty()) Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
-            else{
-                try {
-                    s=s.substring(1,s.length()-1);
-                    JSONObject object = new JSONObject(s);
-                    String p=object.getString("Pass");
-                    if (p.equals(pass)){
-                        SinhVien sv=new SinhVien();
-                        sv.setMaSV(masv);
-                        sv.setHoTen(object.getString("HoTen"));
-                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                        Bundle bundle=new Bundle();
-                        bundle.putSerializable("SV",sv);
-                        intent.putExtra("bundle",bundle);
-                        SinhVien.currentSV=masv;
-                        openActivity(intent,true);
-                        overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
-                    }else{
-                        Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    Toast.makeText(getBaseContext(),"Tai khoan khong dung!",Toast.LENGTH_LONG).show();
-                }
-            }
-        }
+        openActivity(new Intent(LoginActivity.this,MainActivity.class),true);
+        overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
     }
 
 }

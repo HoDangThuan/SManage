@@ -55,8 +55,8 @@ public class DoiMatKhauActivity extends BaseActivity {
     private void xuLyCapNhat() {
         String mkNhapLai= (String) txtNhapLai.getText().toString();
         String mkMoi= (String) txtMK_Moi.getText().toString();
-        if(mkMoi.length()<5 || mkMoi.length()>10 || mkNhapLai.length()<5 ||mkNhapLai.length()>10 ){
-            txtThongBao.setText("Mật khẩu phải lớn hơn 5 và ít hơn 10 ký tự ");
+        if(mkMoi.length()<3 || mkMoi.length()>10 || mkNhapLai.length()<5 ||mkNhapLai.length()>10 ){
+            txtThongBao.setText("Mật khẩu phải lớn hơn 3 và ít hơn 10 ký tự ");
         }
         else
         if(mkNhapLai.equals(mkMoi)){

@@ -8,13 +8,17 @@ import java.util.Date;
  */
 
 public class SinhVien implements Serializable {
-    public  static String currentSV="";
     private String maSV, pass, hoTen, noiSinh, diaChi, sdt, email, mobile, lopSH, atm, cmnd;
     private  double dtb;
     private  int soTcTichLuy, trangThai;
     private Date ngaySinh;
 
     public SinhVien() {
+    }
+
+    public SinhVien(String maSV, String pass) {
+        this.maSV = maSV;
+        this.pass = pass;
     }
 
     public SinhVien(String maSV, String pass, String hoTen, String noiSinh, String diaChi, String sdt,

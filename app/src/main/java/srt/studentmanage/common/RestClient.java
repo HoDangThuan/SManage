@@ -171,6 +171,6 @@ public class RestClient {
                 e.printStackTrace();
             }
         }
-        return sb.toString().replace("\\","");
+        return sb.toString().substring(1,sb.length()-1);
     }
 }
