@@ -53,7 +53,13 @@ public class MainActivity extends BaseActivity {
         btnXemTKB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(new Intent(MainActivity.this,XemThoiKhoaBieuActivity.class),false);
+                if (currentSV==null){
+                    Until.showAlertDialog(MainActivity.this,"Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this,XemThoiKhoaBieuActivity.class);
+                intent.putExtra(MASV,currentSV.getMaSV());
+                openActivity(intent,false);
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
