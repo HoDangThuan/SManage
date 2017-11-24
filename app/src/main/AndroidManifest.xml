@@ -2,30 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="srt.studentmanage">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/cdcn"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ui.activities.MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
+        </activity>
         <activity
             android:name=".ui.activities.XemThoiKhoaBieuActivity"
             android:label="@string/title_activity_xem_tkb" />
-        <activity android:name=".ui.activities.XemDiemActivity">
+        <activity android:name=".ui.activities.XemDiemActivity" />
+        <activity
+            android:name=".ui.activities.XemTinDaoTaoActivity"
+            android:label="Tin đào tạo"></activity>
+        <activity
+            android:name=".ui.activities.ChiTietDaoTaoActivity"
+            android:label="Chi tiết tin đào tạo" />
+        <activity android:name=".ui.activities.DoiMatKhauActivity"
+            android:label="Đổi mật khẩu"></activity>
+        <activity
+            android:name=".ui.activities.CapNhatTTCaNhanActivity"
+            android:label="Thông tin cá nhân" />
+        <activity android:name=".ui.activities.XemHocPhiActivity" />
+        <activity
+            android:name=".ui.activities.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
-        <activity android:name=".ui.activities.XemTinDaoTaoActivity" />
-        <activity android:name=".ui.activities.ChiTietDaoTaoActivity" />
-        <activity android:name=".ui.activities.CapNhatTkNganHangActivity" />
+        <activity android:name=".ui.activities.XemLichThiActivity"
+            android:label="Xem lịch thi">
+
+        </activity>
     </application>
 
 </manifest>

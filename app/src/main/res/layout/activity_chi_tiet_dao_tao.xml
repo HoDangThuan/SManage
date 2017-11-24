@@ -30,13 +30,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Author: Nguyễn Văn Lành"
-            android:id="@+id/txtTieuDe" />
+            android:id="@+id/txtAuthor" />
 
         <TextView
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cập nhật: 15/9/2017"
+            android:text="Cập nhật: 15/10/2017"
             android:gravity="right"
             android:id="@+id/txtTieuDe" />
 
@@ -55,14 +55,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/txtNoiDung"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui of "/>
+                android:text=""/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

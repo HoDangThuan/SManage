@@ -1,14 +1,20 @@
 package srt.studentmanage.ui.activities;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
-import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
 import srt.studentmanage.R;
 import srt.studentmanage.adapter.ThoiKhoaBieuAdapter;
+import srt.studentmanage.common.Constances;
+import srt.studentmanage.common.RestClient;
 import srt.studentmanage.model.objects.ThoiKhoaBieu;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
@@ -18,13 +24,24 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
     ArrayList<ThoiKhoaBieu> dsThoiKhoaBieu;
     ThoiKhoaBieuAdapter thoiKhoaBieuAdapter;
     TabHost tabHost;
+    String masv;
+
     @Override
     protected int getLayout() {
         return R.layout.activity_xem_thoi_khoa_bieu;
     }
 
     @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
+
+    @Override
     protected void initViews() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Intent intent = getIntent();
+        masv = intent.getStringExtra(MainActivity.MASV);
         loadData();
         loadTabs();
         loadListView();
@@ -102,4 +119,33 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
 
     }
 
+    private class  HttpAsyncTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            RestClient client = new RestClient(Constances.URLService+"sinhvien");
+            client.AddParam("masv", masv);
+            client.AddParam("mahk","216");
+            try {
+                client.Execute(RestClient.RequestMethod.GET);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            String response = client.getResponse();
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            JSONArray array = null;
+            try {
+                array = new JSONArray(s);
+
+            } catch (JSONException e) {
+
+            }
+
+        }
+    }
 }

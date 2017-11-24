@@ -17,7 +17,8 @@ public class LoginActivity extends BaseActivity {
     private LinearLayout loginLayout;
     private ImageView imgLogo;
     private Button btnLogin;
-    EditText editAccount,editPassword;
+    EditText txtMaSV,txtPass;
+    String pass, masv;
 
     @Override
     protected int getLayout() {
@@ -29,8 +30,8 @@ public class LoginActivity extends BaseActivity {
         imgLogo= (ImageView) findViewById(R.id.imgLogo);
         loginLayout= (LinearLayout) findViewById(R.id.loginLayout);
         btnLogin= (Button) findViewById(R.id.btnLogin);
-        editAccount= (EditText) findViewById(R.id.editAccount);
-        editPassword= (EditText) findViewById(R.id.editPassword);
+        txtMaSV= (EditText) findViewById(R.id.txtMaSV);
+        txtPass= (EditText) findViewById(R.id.txtPass);
     }
 
     @Override
