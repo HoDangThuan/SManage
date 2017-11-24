@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <TextView
+            android:id="@+id/txtTenLHP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="116JAVA202"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtLopHP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="Lập trình Java II"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtTenGV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="Nguyễn Văn Lành"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtNgayThi"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="14/10/2017"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtGioThi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="7h00"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtPhongThi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="A203"
+            android:textSize="10sp" />
+
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/txtGhiChu"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="@dimen/text_size"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/custom_textview"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="" />-->
+    </LinearLayout>
+</LinearLayout>
