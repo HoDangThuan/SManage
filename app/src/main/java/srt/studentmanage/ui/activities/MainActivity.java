@@ -1,9 +1,6 @@
 package srt.studentmanage.ui.activities;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.Menu;
@@ -19,9 +16,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import srt.studentmanage.R;
+import srt.studentmanage.common.Constances;
 import srt.studentmanage.common.RestClient;
 import srt.studentmanage.common.Until;
-import srt.studentmanage.common.WebService;
 import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
@@ -64,7 +61,13 @@ public class MainActivity extends BaseActivity {
         btnXemDiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(new Intent(MainActivity.this,XemDiemActivity.class),false);
+                if (currentSV==null){
+                    Until.showAlertDialog(MainActivity.this,"Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this,XemDiemActivity.class);
+                intent.putExtra(MASV,currentSV.getMaSV());
+                openActivity(intent,false);
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
@@ -79,7 +82,13 @@ public class MainActivity extends BaseActivity {
         btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(new Intent(MainActivity.this,DoiMatKhauActivity.class),false);
+                if (currentSV==null){
+                    Until.showAlertDialog(MainActivity.this,"Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this,DoiMatKhauActivity.class);
+                intent.putExtra(MASV,currentSV.getMaSV());
+                openActivity(intent,false);
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
@@ -154,7 +163,7 @@ public class MainActivity extends BaseActivity {
                 masv= editName.getText().toString();
                 pass = editPass.getText().toString();
                 LoginAsyncTask loginAsyncTask= new LoginAsyncTask();
-                loginAsyncTask.execute(WebService.URL+"sinhvien");
+                loginAsyncTask.execute(Constances.URLService+"sinhvien");
 
             }
         });

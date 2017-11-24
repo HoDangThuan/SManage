@@ -2,11 +2,8 @@ package srt.studentmanage.ui.activities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,9 +13,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import srt.studentmanage.R;
+import srt.studentmanage.common.Constances;
 import srt.studentmanage.common.RestClient;
-import srt.studentmanage.common.WebService;
-import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
 public class CapNhatTTCaNhanActivity extends BaseActivity {
@@ -32,7 +28,14 @@ public class CapNhatTTCaNhanActivity extends BaseActivity {
     }
 
     @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
+
+    @Override
     protected void initViews() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         txtCMND = (TextView) findViewById(R.id.txtCMND);
         txtATM = (TextView) findViewById(R.id.txtATM);
         txtMaSV = (TextView) findViewById(R.id.txtMaSV);
@@ -49,7 +52,7 @@ public class CapNhatTTCaNhanActivity extends BaseActivity {
 
         txtMaSV.setText(masv);
         HttpAsyncTask httpAsyncTask= new HttpAsyncTask();
-        httpAsyncTask.execute(WebService.URL+"sinhvien");
+        httpAsyncTask.execute(Constances.URLService+"sinhvien");
     }
 
     @Override

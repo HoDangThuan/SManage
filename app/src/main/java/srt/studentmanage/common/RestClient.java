@@ -8,6 +8,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -29,7 +30,8 @@ public class RestClient {
     public enum RequestMethod
     {
         GET,
-        POST
+        POST,
+        PUT
     }
     private ArrayList<NameValuePair> params;
     private ArrayList <NameValuePair> headers;
@@ -118,13 +120,27 @@ public class RestClient {
                 executeRequest(request, url);
                 break;
             }
+
+            case PUT:
+            {
+                HttpPut request = new HttpPut(url);
+                for(NameValuePair h : headers)
+                {
+                    request.addHeader(h.getName(), h.getValue());
+                }
+                if(!params.isEmpty()){
+                    request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+                }
+
+                executeRequest(request,url);
+                break;
+            }
         }
     }
 
     private void executeRequest(HttpUriRequest request, String url)
     {
         HttpClient client = new DefaultHttpClient();
-
         HttpResponse httpResponse;
 
         try {
@@ -152,7 +168,7 @@ public class RestClient {
         }
     }
 
-    private static String convertStreamToString(InputStream is) {
+    public static String convertStreamToString(InputStream is) {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
@@ -171,6 +187,8 @@ public class RestClient {
                 e.printStackTrace();
             }
         }
-        return sb.toString().substring(1,sb.length()-1);
+        String st = sb.toString();
+        if (st.charAt(0) == '"') return st.substring(1,sb.length()-1);
+        return st;
     }
 }

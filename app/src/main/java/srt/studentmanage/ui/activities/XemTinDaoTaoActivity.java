@@ -6,21 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import srt.studentmanage.R;
 import srt.studentmanage.adapter.TinDaoTaoAdapter;
+import srt.studentmanage.common.Constances;
 import srt.studentmanage.common.RestClient;
-import srt.studentmanage.common.WebService;
-import srt.studentmanage.model.objects.SinhVien;
 import srt.studentmanage.model.objects.TinDaoTao;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
@@ -51,7 +47,7 @@ public class XemTinDaoTaoActivity extends BaseActivity {
         lvTinDaoTao.setAdapter(adapter);
 
         HttpAsyncTask httpAsyncTask=new HttpAsyncTask();
-        httpAsyncTask.execute(WebService.URL+"tindaotao");
+        httpAsyncTask.execute(Constances.URLService+"tindaotao");
     }
     @Override
     protected void main() {

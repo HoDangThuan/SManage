@@ -1,32 +1,27 @@
 package srt.studentmanage.ui.activities;
 
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
-
-import java.io.InputStream;
 
 import srt.studentmanage.R;
-import srt.studentmanage.common.WebService;
-import srt.studentmanage.model.objects.SinhVien;
+import srt.studentmanage.common.Constances;
+import srt.studentmanage.common.RestClient;
 import srt.studentmanage.ui.intalize.BaseActivity;
 
 public class DoiMatKhauActivity extends BaseActivity {
 
     private Button btnCapNhat;
-    private TextView txtMK_Cu,txtMK_Moi,txtNhapLai,txtThongBao;
+    private TextView edit_Mk_Cu,edit_Mk_Moi,edit_Mk_Nhap_Lai,txtThongBao;
+    String masv;
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
 
     @Override
     protected int getLayout() {
@@ -35,14 +30,17 @@ public class DoiMatKhauActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnCapNhat= (Button) findViewById(R.id.btnCapNhat);
-        txtMK_Cu= (TextView) findViewById(R.id.txtMK_Cu);
-        txtMK_Moi= (TextView) findViewById(R.id.txtMK_Moi);
-        txtNhapLai= (TextView) findViewById(R.id.txtNhapLai);
+        edit_Mk_Cu= (TextView) findViewById(R.id.edit_Mk_Cu);
+        edit_Mk_Moi= (TextView) findViewById(R.id.edit_Mk_Moi);
+        edit_Mk_Nhap_Lai= (TextView) findViewById(R.id.edit_Mk_Nhap_Lai);
         txtThongBao= (TextView) findViewById(R.id.txtThongBao);
     }
     @Override
     protected void main() {
+        Intent intent = getIntent();
+        masv = intent.getStringExtra(MainActivity.MASV);
         btnCapNhat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,61 +51,50 @@ public class DoiMatKhauActivity extends BaseActivity {
         });
     }
     private void xuLyCapNhat() {
-        String mkNhapLai= (String) txtNhapLai.getText().toString();
-        String mkMoi= (String) txtMK_Moi.getText().toString();
-        if(mkMoi.length()<3 || mkMoi.length()>10 || mkNhapLai.length()<5 ||mkNhapLai.length()>10 ){
+        String mkCu = edit_Mk_Cu.getText().toString();
+        String mkNhapLai= edit_Mk_Nhap_Lai.getText().toString();
+        String mkMoi= edit_Mk_Moi.getText().toString();
+        if(mkMoi.length()<3 || mkMoi.length()>10 ){
             txtThongBao.setText("Mật khẩu phải lớn hơn 3 và ít hơn 10 ký tự ");
         }
         else
         if(mkNhapLai.equals(mkMoi)){
-//            HttpAsyncTask httpAsyncTask=new HttpAsyncTask();
-//            httpAsyncTask.execute("http://192.168.1.234/smanage/api/sinhvien",txtMK_Cu.getText().toString(),txtMK_Moi.getText().toString());
+            (new HttpAsyncTask()).execute(mkCu,mkMoi);
         }
         else{
             txtThongBao.setText("Nhập lại mật khẩu không chính xác");
         }
-
-
-
     }
 
     private class  HttpAsyncTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... params) {
-            InputStream inputStream = null;
-            String result = "";
-
+            RestClient client = new RestClient(Constances.URLService+"sinhvien");
+            client.AddParam("masv", masv);
+            client.AddParam("oldpass",params[0]);
+            client.AddParam("newpass", params[1]);
             try {
-                // 1. create HttpClient
-                HttpClient httpclient = new DefaultHttpClient();
-                HttpPut httpPUT = new
-                        HttpPut(params[0]);
-                String json = "";
-                // 3. build jsonObject
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("masv", "151250533269");
-                jsonObject.put("oldpass",params[1]);
-                jsonObject.put("newpass",params[2]);
-
-                json = jsonObject.toString();
-                StringEntity se = new StringEntity(json);
-                httpPUT.setEntity(se);
-                httpPUT.setHeader("Accept", "application/json");
-                httpPUT.setHeader("Content-type", "application/json");
-                HttpResponse httpResponse = httpclient.execute(httpPUT);
-                inputStream = httpResponse.getEntity().getContent();
-                result = WebService.convertInputStreamToString(inputStream);
+                client.Execute(RestClient.RequestMethod.GET);
             } catch (Exception e) {
-                Log.d("InputStream", e.getLocalizedMessage());
+                e.printStackTrace();
             }
-            return  result;
+            String response = client.getResponse();
+            return response;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(getBaseContext(),s,Toast.LENGTH_LONG).show();
+
+            if (s.equals("true")){
+                edit_Mk_Moi.setText("");
+                edit_Mk_Nhap_Lai.setText("");
+                edit_Mk_Cu.setText("");
+                txtThongBao.setText("Thay đổi mật khẩu thành công!");
+            }
+            else
+                txtThongBao.setText("Thay đổi mật khẩu thất bại!");
         }
     }
 }
