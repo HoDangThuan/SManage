@@ -25,12 +25,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/shape"
+        android:background="@drawable/shape2"
         android:orientation="vertical"
         android:weightSum="1">
 
         <EditText
-            android:id="@+id/editAccount"
+            android:id="@+id/txtMaSV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
@@ -41,7 +41,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/txtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
