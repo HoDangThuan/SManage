@@ -24,12 +24,12 @@
         <TextView
             android:id="@+id/txtSoTCDK"
             android:layout_width="0dp"
-            android:gravity="center"
-            android:textSize="@dimen/text_size_2"
             android:layout_height="match_parent"
-            android:background="@drawable/custom_textview"
             android:layout_weight="1"
-            android:text="17" />
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="17"
+            android:textSize="@dimen/text_size_2" />
 
         <TextView
             android:id="@+id/txtDiemTB"

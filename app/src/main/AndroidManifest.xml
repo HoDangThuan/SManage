@@ -17,7 +17,6 @@
         <activity
             android:name=".ui.activities.MainActivity"
             android:label="@string/title_activity_main">
-
         </activity>
         <activity
             android:name=".ui.activities.XemThoiKhoaBieuActivity"
@@ -45,6 +44,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.XemLichThiActivity"
+            android:label="Xem lịch thi">
+
+        </activity>
+        <activity android:name=".ui.activities.CapNhatTkNganHangActivity"
+            android:label="Cập nhật tài khoản ngân hàng"/>
     </application>
 
 </manifest>

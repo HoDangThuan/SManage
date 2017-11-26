@@ -26,7 +26,7 @@
             android:layout_width="92dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Mã sinh viên"
+            android:text="Mã sinh viên:"
             android:textSize="16sp" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Họ và tên"
+            android:text="Họ và tên:"
             android:textSize="16sp" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Ngày sinh"
+            android:text="Ngày sinh:"
             android:textSize="16sp" />
 
         <TextView
@@ -96,7 +96,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Nơi sinh"
+            android:text="Nơi sinh:"
             android:textSize="16sp" />
 
         <TextView
@@ -118,7 +118,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Địa chỉ"
+            android:text="Địa chỉ:"
             android:textSize="16sp" />
 
         <TextView
@@ -141,7 +141,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Số điện thoại"
+            android:text="Số điện thoại:"
             android:textSize="16sp" />
 
         <TextView
@@ -164,7 +164,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Email"
+            android:text="Email:"
             android:textSize="16sp" />
 
         <TextView
@@ -187,7 +187,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Mobile"
+            android:text="Mobile:"
             android:textSize="16sp" />
 
         <TextView
@@ -207,7 +207,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Số CMND" />
+            android:text="Số CMND:" />
 
         <EditText
             android:id="@+id/editText"
@@ -229,7 +229,7 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Số tài khoản ATM" />
+            android:text="Số tài khoản ATM:" />
 
         <EditText
             android:id="@+id/editText2"

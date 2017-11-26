@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -27,32 +28,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="3.85" />
+                android:text="3.85"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Số tín chỉ đã tích lũy: " />
+
             <TextView
                 android:id="@+id/txtSoTcTichLuy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="87" />
+                android:text="87"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
@@ -64,78 +68,78 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="Xuất sắc" />
+                android:text="Xuất sắc"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
             android:text="Tổng kết theo học kỳ:"
-            android:layout_marginBottom="5dp"
             android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="5"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="5">
 
             <TextView
                 android:id="@+id/textView20"
-                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
+                android:background="@drawable/custom_textview2"
+                android:gravity="center"
                 android:text="Mã\nHK" />
 
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="0dp"
-                android:gravity="center"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
+                android:background="@drawable/custom_textview2"
+                android:gravity="center"
                 android:text="Số\nTCĐK" />
 
             <TextView
                 android:id="@+id/textView18"
-                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
+                android:background="@drawable/custom_textview2"
+                android:gravity="center"
                 android:text="Điểm\nTBCHT" />
 
             <TextView
                 android:id="@+id/textView17"
-                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
+                android:background="@drawable/custom_textview2"
+                android:gravity="center"
                 android:text="Điểm\nRL" />
 
             <TextView
                 android:id="@+id/textView16"
-                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_textview2"
                 android:layout_weight="1"
+                android:background="@drawable/custom_textview2"
+                android:gravity="center"
                 android:text="Xếp loại" />
 
             <!--<TextView-->
-                <!--android:id="@+id/textView15"-->
-                <!--android:gravity="center"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@drawable/custom_textview2"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="Ghi Chú" />-->
+            <!--android:id="@+id/textView15"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/custom_textview2"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Ghi Chú" />-->
         </LinearLayout>
 
         <ListView
@@ -147,9 +151,9 @@
             android:id="@+id/textView26"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
             android:text="Các sự kiện khen thưởng kỉ luật:"
-            android:layout_marginBottom="5dp"
             android:textSize="15sp" />
 
         <ListView
