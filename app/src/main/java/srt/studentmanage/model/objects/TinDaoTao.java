@@ -1,14 +1,26 @@
 package srt.studentmanage.model.objects;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * Created by Huu Ty on 14/09/2017.
  */
 
-public class TinDaoTao {
+public class TinDaoTao implements Serializable {
     private int maTin;
     private String tieuDe;
     private String noiDung;
     private String tacGia;
+    private Date ngayViet;
+
+    public Date getNgayViet() {
+        return ngayViet;
+    }
+
+    public void setNgayViet(Date ngayViet) {
+        this.ngayViet = ngayViet;
+    }
 
     public int getMaTin() {
         return maTin;

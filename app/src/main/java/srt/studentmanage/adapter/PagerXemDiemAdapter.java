@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import srt.studentmanage.model.objects.BangDiem;
 import srt.studentmanage.ui.fragments.BangDiemFragment;
 import srt.studentmanage.ui.fragments.TongKetDiemFragment;
 

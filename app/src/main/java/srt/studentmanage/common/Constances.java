@@ -5,8 +5,5 @@ package srt.studentmanage.common;
  */
 
 public class Constances {
-    public int longTime=500;
-    public int getLongTime(){
-        return longTime;
-    }
+    public static  final String URLService="http://192.168.1.234/smanage/api/";
 }
