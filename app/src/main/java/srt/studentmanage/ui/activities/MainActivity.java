@@ -33,6 +33,25 @@ public class MainActivity extends BaseActivity {
 
     public static final String PASS = "pass";
     public static final String MASV= "masv";
+    public static final int REQUEST_CODE_INPUT=113;
+    public static final int RESULT_CODE=115;
+
+    public String getMasv() {
+        return masv;
+    }
+
+    public void setMasv(String masv) {
+        this.masv = masv;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
     @Override
     protected int getLayout() {
         return R.layout.activity_main;
@@ -53,7 +72,13 @@ public class MainActivity extends BaseActivity {
         btnXemTKB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(new Intent(MainActivity.this,XemThoiKhoaBieuActivity.class),false);
+                if (currentSV==null){
+                    Until.showAlertDialog(MainActivity.this,"Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this,XemThoiKhoaBieuActivity.class);
+                intent.putExtra(MASV,currentSV.getMaSV());
+                openActivity(intent,false);
                 overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
             }
         });
@@ -123,6 +148,7 @@ public class MainActivity extends BaseActivity {
         this.menu = menu;
         return super.onCreateOptionsMenu(menu);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

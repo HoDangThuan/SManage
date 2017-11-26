@@ -39,9 +39,8 @@ public class XemDiemActivity extends BaseActivity {
     @Override
     protected void initViews() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-//        Intent intent = getIntent();
-//        masv = intent.getStringExtra(MainActivity.MASV);
+        Intent intent = getIntent();
+        masv = intent.getStringExtra(MainActivity.MASV);
     }
 
     public BangDiem getBangDiem() {
@@ -64,7 +63,7 @@ public class XemDiemActivity extends BaseActivity {
         @Override
         protected String doInBackground(String... params) {
             RestClient client = new RestClient(Constances.URLService+"sinhvien");
-            client.AddParam("masvbd", "151250533269");
+            client.AddParam("masvbd", masv);
             try {
                 client.Execute(RestClient.RequestMethod.GET);
             } catch (Exception e) {
