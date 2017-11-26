@@ -230,7 +230,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCapNhatTT"
         android:layout_width="140dp"
         android:layout_height="37dp"
         android:text="Cập nhật" />

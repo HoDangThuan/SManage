@@ -17,17 +17,17 @@
         <activity
             android:name=".ui.activities.MainActivity"
             android:label="@string/title_activity_main">
-
-        </activity>
-        <activity
-            android:name=".ui.activities.XemThoiKhoaBieuActivity"
-            android:label="@string/title_activity_xem_tkb" />
-        <activity android:name=".ui.activities.XemDiemActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.XemThoiKhoaBieuActivity"
+            android:label="@string/title_activity_xem_tkb" />
+        <activity android:name=".ui.activities.XemDiemActivity" >
+
         </activity>
         <activity
             android:name=".ui.activities.XemTinDaoTaoActivity"
