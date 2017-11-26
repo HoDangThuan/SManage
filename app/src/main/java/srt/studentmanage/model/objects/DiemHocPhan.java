@@ -11,7 +11,6 @@ public class DiemHocPhan implements Serializable {
     private String lopHP;
     private String tenHP;
     private int soTc;
-    private int hocKi;
     private String diemChu;
     private double diemSo;
     private boolean tichLuy;
@@ -20,12 +19,11 @@ public class DiemHocPhan implements Serializable {
     public DiemHocPhan() {
     }
 
-    public DiemHocPhan(String maHP, String lopHP, String tenHP, int soTc, int hocKi, String diemChu, double diemSo, boolean tichLuy, String ghiChu) {
+    public DiemHocPhan(String maHP, String lopHP, String tenHP, int soTc, String diemChu, double diemSo, boolean tichLuy, String ghiChu) {
         this.maHP = maHP;
         this.lopHP = lopHP;
         this.tenHP = tenHP;
         this.soTc = soTc;
-        this.hocKi = hocKi;
         this.diemChu = diemChu;
         this.diemSo = diemSo;
         this.tichLuy = tichLuy;
@@ -62,14 +60,6 @@ public class DiemHocPhan implements Serializable {
 
     public void setSoTc(int soTc) {
         this.soTc = soTc;
-    }
-
-    public int getHocKi() {
-        return hocKi;
-    }
-
-    public void setHocKi(int hocKi) {
-        this.hocKi = hocKi;
     }
 
     public String getDiemChu() {

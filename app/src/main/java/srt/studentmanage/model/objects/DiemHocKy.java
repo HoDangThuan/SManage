@@ -1,5 +1,7 @@
 package srt.studentmanage.model.objects;
 
+import java.util.ArrayList;
+
 /**
  * Created by Admin on 09/11/2017.
  */
@@ -8,6 +10,8 @@ public class DiemHocKy {
     private int maHK,soTcDk;
     private double diemTB, diemRL;
     private String xepLoai, ghiChu;
+    private ArrayList<DiemHocPhan> diemHocPhan;
+    private ArrayList<KhenThuongKiLuat> khenThuongKiLuats;
 
     public DiemHocKy() {
     }
@@ -19,6 +23,20 @@ public class DiemHocKy {
         this.diemRL = diemRL;
         this.xepLoai = xepLoai;
         this.ghiChu = ghiChu;
+    }
+    public ArrayList<DiemHocPhan> getDiemHocPhan() {
+        return diemHocPhan;
+    }
+    public void setDiemHocPhan(ArrayList<DiemHocPhan> diemHocPhan) {
+        this.diemHocPhan = diemHocPhan;
+    }
+
+    public ArrayList<KhenThuongKiLuat> getKhenThuongKiLuats() {
+        return khenThuongKiLuats;
+    }
+
+    public void setKhenThuongKiLuats(ArrayList<KhenThuongKiLuat> khenThuongKiLuats) {
+        this.khenThuongKiLuats = khenThuongKiLuats;
     }
 
     public int getMaHK() {
