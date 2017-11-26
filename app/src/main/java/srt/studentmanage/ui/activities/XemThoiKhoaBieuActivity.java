@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +29,7 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
     ThoiKhoaBieuAdapter thoiKhoaBieuAdapter;
     TabHost tabHost;
     String masv;
+    TextView txtHocKi;
 
     @Override
     protected int getLayout() {
@@ -45,7 +47,7 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         masv = intent.getStringExtra(MainActivity.MASV);
-
+        txtHocKi = (TextView) findViewById(R.id.txtHocKi);
         loadTabs();
         loadData();
 
@@ -153,7 +155,9 @@ public class XemThoiKhoaBieuActivity extends BaseActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             try {
-                JSONArray array = new JSONArray(s);
+                JSONObject root = new JSONObject(s);
+                txtHocKi.setText("Học kì "+root.getString("MaHK"));
+                JSONArray array = root.getJSONArray("TKB");
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
                 for (int i = 0; i<array.length(); i++){

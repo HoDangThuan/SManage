@@ -5,20 +5,35 @@ package srt.studentmanage.model.objects;
  */
 
 public class KhenThuongKiLuat {
-    String context;
+    private  int maHK;
+    private String loaiKT;
+    private String moTa;
+
 
     public KhenThuongKiLuat() {
     }
 
-    public KhenThuongKiLuat(String context) {
-        this.context = context;
+    public int getMaHK() {
+        return maHK;
     }
 
-    public String getContext() {
-        return context;
+    public void setMaHK(int maHK) {
+        this.maHK = maHK;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public String getLoaiKT() {
+        return loaiKT;
+    }
+
+    public void setLoaiKT(String loaiKT) {
+        this.loaiKT = loaiKT;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
     }
 }

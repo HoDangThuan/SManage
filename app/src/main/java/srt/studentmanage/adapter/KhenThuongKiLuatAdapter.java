@@ -40,7 +40,8 @@ public class KhenThuongKiLuatAdapter extends ArrayAdapter<KhenThuongKiLuat> {
         txtContext= (TextView) row.findViewById(R.id.txtContext);
 
         KhenThuongKiLuat khenThuongKiLuat=this.objects.get(position);
-        txtContext.setText(khenThuongKiLuat.getContext());
+        txtContext.setText("- Học kỳ "+khenThuongKiLuat.getMaHK()+": " + khenThuongKiLuat.getLoaiKT()
+                +" - Lý do: "+ khenThuongKiLuat.getMoTa());
         return row;
     }
 }

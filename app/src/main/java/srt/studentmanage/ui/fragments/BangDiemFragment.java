@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -17,7 +18,10 @@ import java.util.ArrayList;
 
 import srt.studentmanage.R;
 import srt.studentmanage.adapter.DiemHocPhanAdapter;
+import srt.studentmanage.model.objects.BangDiem;
+import srt.studentmanage.model.objects.DiemHocKy;
 import srt.studentmanage.model.objects.DiemHocPhan;
+import srt.studentmanage.ui.activities.XemDiemActivity;
 
 
 public class BangDiemFragment extends Fragment {
@@ -28,7 +32,8 @@ public class BangDiemFragment extends Fragment {
     View v;
 
     Spinner spnHocKy;
-    ArrayList<Integer> dsHocKy;
+    ArrayList<Integer> dsHocKy = new ArrayList<>();
+    BangDiem bangDiem;
     public BangDiemFragment() {
     }
 
@@ -36,28 +41,45 @@ public class BangDiemFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v= inflater.inflate(R.layout.fragment_bang_diem,container,false);
-        loadListView();
+        spnHocKy= (Spinner) v.findViewById(R.id.spnHocKy);
+        lvDiemHocPhan= (ListView) v.findViewById(R.id.lvDiemHocPhan);
+        XemDiemActivity activity = (XemDiemActivity) getActivity();
+        this.bangDiem = activity.getBangDiem();
+        spnHocKy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int mahk = Integer.parseInt(spnHocKy.getSelectedItem().toString());
+                loadListView(mahk);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         loadSpinner();
         return v;
     }
 
     private void loadSpinner() {
         dsHocKy=new ArrayList<>();
-        dsHocKy.add(117);
-        dsHocKy.add(217);
-        dsHocKy.add(317);
-        spnHocKy= (Spinner) v.findViewById(R.id.spnHocKy);
+        for (DiemHocKy dhk : bangDiem.getDiemHocKies()){
+            dsHocKy.add(dhk.getMaHK());
+        }
+
         ArrayAdapter<Integer> hocKyAdapter=new ArrayAdapter<Integer>(getActivity(),R.layout.spinner_item,dsHocKy);
         hocKyAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spnHocKy.setAdapter(hocKyAdapter);
     }
 
-    private void loadListView() {
-        lvDiemHocPhan= (ListView) v.findViewById(R.id.lvDiemHocPhan);
-        dsDiemHocPhan=new ArrayList<>();
-        dsDiemHocPhan.add(new DiemHocPhan("5020021","100NN000","Ngoại Ngữ cơ bản",3,117,"DR",4.9,true,""));
-        dsDiemHocPhan.add(new DiemHocPhan("5020290","115GDTC117","Giáo dục thể chất I",2,117,"B",7.9,false,""));
-        dsDiemHocPhan.add(new DiemHocPhan("5020021","115LTC01","Lập trình cơ bản với C",3,117,"A",1,true,""));
+    private void loadListView(int maHK) {
+
+        for (DiemHocKy dhk : bangDiem.getDiemHocKies()){
+            if (dhk.getMaHK() == maHK){
+                dsDiemHocPhan = new ArrayList<>(dhk.getDiemHocPhan());
+                break;
+            }
+        }
         diemHocPhanAdapter=new DiemHocPhanAdapter(getActivity(),R.layout.item_lv_xem_diem,dsDiemHocPhan);
         lvDiemHocPhan.setAdapter(diemHocPhanAdapter);
     }
