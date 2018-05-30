@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/txtMaHP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="5020490"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtTenHP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="Toán rời rạc"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtSoTC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="2"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtLoaiMH"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="CNTCBB"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/txtGhiChu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_textview"
+            android:gravity="center"
+            android:text="217TRR01"
+            android:textSize="10sp" />
+
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/txtGhiChu"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="@dimen/text_size"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/custom_textview"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="" />-->
+    </LinearLayout>
+</LinearLayout>
