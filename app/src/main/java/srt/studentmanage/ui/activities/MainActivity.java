@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity {
 
 
     ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao,btnDoiMatKhau, btnCapNhatNganHang
-            ,btnXemLichThi, btnXemThongTin, btnXemHocPhi;
+            ,btnXemLichThi, btnXemThongTin, btnXemHocPhi,btnTB_LopCD;
     String masv;
     String pass;
     SinhVien currentSV=null;
@@ -69,10 +69,19 @@ public class MainActivity extends BaseActivity {
         btnDoiMatKhau= (ImageButton) findViewById(R.id.btnDoiMatKhau);
         btnXemThongTin= (ImageButton) findViewById(R.id.btnXemThongTin);
         btnXemHocPhi= (ImageButton) findViewById(R.id.btnXemHocPhi);
+        btnTB_LopCD= (ImageButton) findViewById(R.id.btnTB_LopCD);
     }
 //151250533269
     @Override
     protected void main() {
+        btnTB_LopCD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, XemThongBaoLopCDActivity.class);
+                openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            }
+        });
         btnXemTKB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,7 +155,13 @@ public class MainActivity extends BaseActivity {
         btnXemHocPhi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(new Intent(MainActivity.this, XemHocPhiActivity.class), false);
+                if (currentSV == null) {
+                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this, XemHocPhiActivity.class);
+                intent.putExtra(MASV, currentSV.getMaSV());
+                openActivity(intent, false);
                 overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
             }
         });
