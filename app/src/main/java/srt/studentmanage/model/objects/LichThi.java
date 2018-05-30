@@ -1,8 +1,5 @@
 package srt.studentmanage.model.objects;
 
-/**
- * Created by Dell on 11/24/2017.
- */
 
 public class LichThi {
     private String tenLHP,lopHP,tenGV,ngayThi,gioThi,phongThi;
