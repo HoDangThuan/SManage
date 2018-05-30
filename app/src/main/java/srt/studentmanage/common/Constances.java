@@ -5,5 +5,5 @@ package srt.studentmanage.common;
  */
 
 public class Constances {
-    public static  final String URLService="http://smanager.somee.com/api/";
+    public static  final String URLService="http://192.168.1.56/smanager/api/";
 }

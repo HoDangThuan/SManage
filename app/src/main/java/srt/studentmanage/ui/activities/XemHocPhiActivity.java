@@ -108,8 +108,8 @@ public class XemHocPhiActivity extends BaseActivity {
                 Date date = sdf.parse(txtDate);
                 txtNgayCapNhat.setText(sdf2.format(date));
                 Double tt=  ob.getDouble("HocPhiPhaiNop")+ob.getDouble("BaoHiemYTe")
-                        +ob.getDouble("BaoHiemThanThe")
-                        -ob.getDouble("NopQuaATM")-ob.getDouble("NopTaiTaiVu");
+                            +ob.getDouble("BaoHiemThanThe")
+                            -ob.getDouble("NopQuaATM")-ob.getDouble("NopTaiTaiVu");
                 txtTongTien.setText(tt.toString().substring(0,tt.toString().length()-2)+" (đồng)");
 
                 for(int i=0;i<arrayHP.length();i++)
@@ -156,7 +156,7 @@ public class XemHocPhiActivity extends BaseActivity {
                     }
                 });
             } catch (JSONException e) {
-                e.printStackTrace();
+               e.printStackTrace();
             } catch (ParseException e) {
                 e.printStackTrace();
             }

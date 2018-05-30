@@ -11,7 +11,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import srt.studentmanage.R;
 import srt.studentmanage.adapter.TinDaoTaoAdapter;
@@ -90,12 +93,18 @@ public class XemTinDaoTaoActivity extends BaseActivity {
                 JSONArray arr = new JSONArray(s);
                 for (int i=0;i<arr.length();i++){
                     JSONObject o=arr.getJSONObject(i);
+                    String txtDate= o.getString("TimeUpdated");
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+                    Date date = sdf.parse(txtDate);
                     TinDaoTao t= new TinDaoTao(o.getInt("MaTin"),o.getString("TieuDe"), o.getString("NoiDung"),
-                            o.getString("Author"));
+                            o.getString("Author"),sdf2.format(date));
                     dsTinDaoTao.add(t);
                 }
             } catch (JSONException e1) {
                 e1.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
             adapter.notifyDataSetChanged();
 

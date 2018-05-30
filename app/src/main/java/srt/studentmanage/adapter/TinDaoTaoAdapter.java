@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import srt.studentmanage.R;
-import srt.studentmanage.common.Until;
 import srt.studentmanage.model.objects.TinDaoTao;
 
 /**
@@ -40,7 +39,6 @@ public class TinDaoTaoAdapter extends ArrayAdapter<TinDaoTao> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row = convertView;
-//        TextView txtTieuDe, txtNoiDung, txtTacGia, txtNgayViet;
         if (row== null){
             row=inflater.inflate(this.resource,null);
             ViewHolder viewHolder = new ViewHolder();
@@ -55,7 +53,7 @@ public class TinDaoTaoAdapter extends ArrayAdapter<TinDaoTao> {
         viewHolder.txtTieuDe.setText(tdt.getTieuDe());
         viewHolder.txtNoiDung.setText((tdt.getNoiDung().length()>100)?tdt.getNoiDung().substring(0,99)+"...":tdt.getNoiDung()+"...");
         viewHolder.txtTacGia.setText("Author: "+tdt.getTacGia());
-//        viewHolder.txtNgayViet.setText(Until.DateToString(tdt.getNgayViet()));
+        viewHolder.txtNgayViet.setText(tdt.getNgayViet());
         return row;
     }
 }

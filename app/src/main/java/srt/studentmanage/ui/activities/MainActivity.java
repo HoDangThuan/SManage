@@ -25,8 +25,9 @@ import srt.studentmanage.ui.intalize.BaseActivity;
 public class MainActivity extends BaseActivity {
 
 
-    ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao,btnDoiMatKhau, btnCapNhatNganHang
-            ,btnXemLichThi, btnXemThongTin, btnXemHocPhi,btnTB_LopCD;
+    ImageButton btnXemTKB,btnXemDiem, btnXemTinDaoTao,btnDoiMatKhau, btnCapNhatNganHang,
+            btnXemLichThi, btnXemThongTin, btnXemHocPhi, btnDangKyMonHoc,btnTB_LopCD,
+            btnHocPhanChuaTichLuy;
     String masv;
     String pass;
     SinhVien currentSV=null;
@@ -69,19 +70,13 @@ public class MainActivity extends BaseActivity {
         btnDoiMatKhau= (ImageButton) findViewById(R.id.btnDoiMatKhau);
         btnXemThongTin= (ImageButton) findViewById(R.id.btnXemThongTin);
         btnXemHocPhi= (ImageButton) findViewById(R.id.btnXemHocPhi);
+        btnDangKyMonHoc= (ImageButton) findViewById(R.id.btnDangKyMonHoc);
         btnTB_LopCD= (ImageButton) findViewById(R.id.btnTB_LopCD);
+        btnHocPhanChuaTichLuy= (ImageButton) findViewById(R.id.btnHocPhanChuaTichLuy);
     }
 //151250533269
     @Override
     protected void main() {
-        btnTB_LopCD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, XemThongBaoLopCDActivity.class);
-                openActivity(intent, false);
-                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
-            }
-        });
         btnXemTKB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +108,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, XemTinDaoTaoActivity.class);
+                openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            }
+        });
+        btnTB_LopCD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, XemThongBaoLopCDActivity.class);
                 openActivity(intent, false);
                 overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
             }
@@ -161,28 +164,51 @@ public class MainActivity extends BaseActivity {
         btnXemHocPhi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentSV == null) {
-                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
-                    return;
-                }
-                Intent intent = new Intent(MainActivity.this, XemHocPhiActivity.class);
-                intent.putExtra(MASV, currentSV.getMaSV());
-                openActivity(intent, false);
-                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            if (currentSV == null) {
+                Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                return;
             }
-        });
-        btnCapNhatNganHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CapNhatTkNganHangActivity.class);
-                openActivity(intent, false);
-                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            Intent intent = new Intent(MainActivity.this, XemHocPhiActivity.class);
+            intent.putExtra(MASV, currentSV.getMaSV());
+            openActivity(intent, false);
+            overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
             }
         });
         btnXemLichThi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (currentSV == null) {
+                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                    return;
+                }
                 Intent intent = new Intent(MainActivity.this, XemLichThiActivity.class);
+                intent.putExtra(MASV, currentSV.getMaSV());
+                openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            }
+        });
+        btnHocPhanChuaTichLuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentSV == null) {
+                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this, XemHPCTLActivity.class);
+                intent.putExtra(MASV, currentSV.getMaSV());
+                openActivity(intent, false);
+                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
+            }
+        });
+        btnDangKyMonHoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentSV == null) {
+                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                    return;
+                }
+                Intent intent = new Intent(MainActivity.this, DangKyMonHocActivity.class);
+                intent.putExtra(MASV, currentSV.getMaSV());
                 openActivity(intent, false);
                 overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
             }

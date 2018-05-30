@@ -106,6 +106,7 @@ public class XemDiemActivity extends BaseActivity {
                         JSONObject diemHP = diems.getJSONObject(j);
                         DiemHocPhan dhp = new DiemHocPhan();
                         dhp.setMaHP(diemHP.getString("MaHP"));
+                        dhp.setLopHP(diemHP.getString("MaLHP"));
                         dhp.setTenHP(diemHP.getString("TenHP"));
                         dhp.setSoTc(diemHP.getInt("SoTC"));
                         dhp.setGhiChu(diemHP.getString("GhiChu"));

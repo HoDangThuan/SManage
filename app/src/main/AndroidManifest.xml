@@ -28,6 +28,9 @@
             android:name=".ui.activities.XemTinDaoTaoActivity"
             android:label="Tin đào tạo"></activity>
         <activity
+            android:name=".ui.activities.XemThongBaoLopCDActivity"
+            android:label="Thông Báo Lớp - Chi Đoàn"></activity>
+        <activity
             android:name=".ui.activities.ChiTietDaoTaoActivity"
             android:label="Chi tiết tin đào tạo" />
         <activity android:name=".ui.activities.DoiMatKhauActivity"
@@ -46,10 +49,13 @@
         </activity>
         <activity android:name=".ui.activities.XemLichThiActivity"
             android:label="Xem lịch thi">
-
         </activity>
         <activity android:name=".ui.activities.CapNhatTkNganHangActivity"
             android:label="Cập nhật tài khoản ngân hàng"/>
+        <activity android:name=".ui.activities.XemHPCTLActivity"
+            android:label="Học phần chưa tích lũy"/>
+        <activity android:name=".ui.activities.DangKyMonHocActivity"
+            android:label="Đăng ký môn học"/>
     </application>
 
 </manifest>
