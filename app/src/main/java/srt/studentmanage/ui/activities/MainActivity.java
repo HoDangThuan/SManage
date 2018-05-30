@@ -133,9 +133,15 @@ public class MainActivity extends BaseActivity {
         btnCapNhatNganHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (currentSV == null) {
+                    Until.showAlertDialog(MainActivity.this, "Chưa đăng nhập");
+                    return;
+                }
                 Intent intent = new Intent(MainActivity.this, CapNhatTkNganHangActivity.class);
+                intent.putExtra(MASV, currentSV.getMaSV());
+                intent.putExtra(PASS, currentSV.getPass());
                 openActivity(intent, false);
-                overridePendingTransition(R.anim.animation_activity_2,R.anim.animation_activity_1);
+                overridePendingTransition(R.anim.animation_activity_2, R.anim.animation_activity_1);
             }
         });
         btnXemThongTin.setOnClickListener(new View.OnClickListener() {

@@ -26,6 +26,7 @@ public class CapNhatTTCaNhanActivity extends BaseActivity {
     EditText editNoiSinh, editDiaChi, editSoDT, editMobile, editEmail;
     String masv,pass;
     Button btnCapNhatTT;
+
     @Override
     protected int getLayout() {
         return R.layout.activity_cap_nhat_ttca_nhan;
